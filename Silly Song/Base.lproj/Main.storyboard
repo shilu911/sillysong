@@ -1,26 +1,85 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Silly_Song" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="center" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Silly Song" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sq9-CT-6Br">
+                                <rect key="frame" x="88.5" y="20" width="198" height="79"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="198" id="01X-Yp-OBx"/>
+                                    <constraint firstAttribute="height" constant="79" id="7eQ-oG-NbX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="36"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.0" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4V7-I2-Wet">
+                                <rect key="frame" x="16" y="107" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="displayLyrics:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="jGG-dM-XfV"/>
+                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="5O8-3h-EAR"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1ap-CX-6js">
+                                <rect key="frame" x="67" y="169" width="240" height="451"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="5cl-TN-Q2J"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="451" id="75J-K7-g1M"/>
+                                    <constraint firstAttribute="height" constant="451" id="PRS-hk-C2n"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="jY7-DT-38F"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1ap-CX-6js" firstAttribute="top" secondItem="4V7-I2-Wet" secondAttribute="bottom" constant="59" id="1Kk-i6-sfx"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="4V7-I2-Wet" secondAttribute="leading" id="4hq-Ie-J99"/>
+                            <constraint firstItem="1ap-CX-6js" firstAttribute="centerX" secondItem="4V7-I2-Wet" secondAttribute="centerX" id="5hY-Hf-IJd"/>
+                            <constraint firstItem="4V7-I2-Wet" firstAttribute="top" secondItem="sq9-CT-6Br" secondAttribute="bottom" constant="8" id="67P-ZC-ev4"/>
+                            <constraint firstItem="1ap-CX-6js" firstAttribute="centerX" secondItem="4V7-I2-Wet" secondAttribute="centerX" id="UGN-JB-eB7"/>
+                            <constraint firstItem="1ap-CX-6js" firstAttribute="centerX" secondItem="4V7-I2-Wet" secondAttribute="centerX" id="UIC-Ap-AeC"/>
+                            <constraint firstItem="1ap-CX-6js" firstAttribute="top" secondItem="4V7-I2-Wet" secondAttribute="bottom" constant="59" id="Whv-cc-2Sg"/>
+                            <constraint firstItem="1ap-CX-6js" firstAttribute="top" secondItem="4V7-I2-Wet" secondAttribute="bottom" constant="32" id="dW5-2g-Oe8"/>
+                            <constraint firstItem="1ap-CX-6js" firstAttribute="centerX" secondItem="4V7-I2-Wet" secondAttribute="centerX" id="faw-oz-xkX"/>
+                            <constraint firstItem="sq9-CT-6Br" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="hJt-2V-Bbb"/>
+                            <constraint firstItem="1ap-CX-6js" firstAttribute="top" secondItem="4V7-I2-Wet" secondAttribute="bottom" constant="59" id="nta-mZ-wKK"/>
+                            <constraint firstItem="sq9-CT-6Br" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="odN-JK-eki"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4V7-I2-Wet" secondAttribute="trailing" id="vwu-H7-CPN"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lyricsView" destination="1ap-CX-6js" id="xYa-el-xXV"/>
+                        <outlet property="nameField" destination="4V7-I2-Wet" id="kcS-5H-Cex"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
